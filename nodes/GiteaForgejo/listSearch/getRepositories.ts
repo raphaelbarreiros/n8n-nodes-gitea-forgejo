@@ -62,7 +62,7 @@ export async function getRepositories(
 	});
 
 	const results: INodeListSearchItems[] = repositories.map((item) => ({
-		name: item.full_name,
+		name: item.name,
 		value: item.name,
 		url: item.html_url,
 	}));

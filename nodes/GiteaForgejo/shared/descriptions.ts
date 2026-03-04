@@ -13,7 +13,7 @@ export const ownerSelect: INodeProperties = {
 			type: 'list',
 			placeholder: 'Select an owner...',
 			typeOptions: {
-				searchListMethod: 'getUsers',
+				searchListMethod: 'getOwners',
 				searchable: true,
 				searchFilterRequired: false,
 			},

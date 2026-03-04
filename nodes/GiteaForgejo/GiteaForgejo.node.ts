@@ -3,6 +3,7 @@ import { issueDescription } from './resources/issue';
 import { issueCommentDescription } from './resources/issueComment';
 import { repositoryDescription } from './resources/repository';
 import { userDescription } from './resources/user';
+import { getOwners } from './listSearch/getOwners';
 import { getUsers } from './listSearch/getUsers';
 import { getRepositories } from './listSearch/getRepositories';
 import { getIssues } from './listSearch/getIssues';
@@ -73,6 +74,7 @@ export class GiteaForgejo implements INodeType {
 
 	methods = {
 		listSearch: {
+			getOwners,
 			getUsers,
 			getRepositories,
 			getIssues,
