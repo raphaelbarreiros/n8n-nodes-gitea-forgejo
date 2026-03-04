@@ -17,42 +17,6 @@ const showOnlyForRepositoryGetMany = {
 
 export const repositoryDescription: INodeProperties[] = [
 	{
-		displayName: 'Operation',
-		name: 'operation',
-		type: 'options',
-		noDataExpression: true,
-		displayOptions: {
-			show: showOnlyForRepositories,
-		},
-		options: [
-			{
-				name: 'Get',
-				value: 'get',
-				action: 'Get a repository',
-				description: 'Get a repository by owner and name',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '=/repos/{{$parameter.owner}}/{{$parameter.repository}}',
-					},
-				},
-			},
-			{
-				name: 'Get Many',
-				value: 'getMany',
-				action: 'Get repositories for an owner',
-				description: 'Get repositories for an owner',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '={{$parameter.ownerType === "organization" ? "/orgs/" + $parameter.owner + "/repos" : "/users/" + $parameter.owner + "/repos"}}',
-					},
-				},
-			},
-		],
-		default: 'getMany',
-	},
-	{
 		displayName: 'Owner Type',
 		name: 'ownerType',
 		type: 'options',

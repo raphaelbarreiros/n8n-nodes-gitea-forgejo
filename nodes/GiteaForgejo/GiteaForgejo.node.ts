@@ -2,11 +2,14 @@ import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from '
 import { issueDescription } from './resources/issue';
 import { issueCommentDescription } from './resources/issueComment';
 import { repositoryDescription } from './resources/repository';
+import { pullRequestDescription } from './resources/pullRequest';
 import { userDescription } from './resources/user';
+import { getOperations } from './loadOptions/getOperations';
 import { getOwners } from './listSearch/getOwners';
 import { getUsers } from './listSearch/getUsers';
 import { getRepositories } from './listSearch/getRepositories';
 import { getIssues } from './listSearch/getIssues';
+import { getPullRequests } from './listSearch/getPullRequests';
 
 export class GiteaForgejo implements INodeType {
 	description: INodeTypeDescription = {
@@ -47,10 +50,6 @@ export class GiteaForgejo implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'Repository',
-						value: 'repository',
-					},
-					{
 						name: 'Issue',
 						value: 'issue',
 					},
@@ -59,25 +58,51 @@ export class GiteaForgejo implements INodeType {
 						value: 'issueComment',
 					},
 					{
+						name: 'Pull Request',
+						value: 'pullRequest',
+					},
+					{
+						name: 'Repository',
+						value: 'repository',
+					},
+					{
 						name: 'User',
 						value: 'user',
 					},
 				],
 				default: 'repository',
 			},
+			{
+				displayName: 'Operation Name or ID',
+				name: 'operation',
+				type: 'options',
+				description:
+					'Choose from the list, or specify an ID using an <a href="https://docs.n8n.io/code/expressions/">expression</a>',
+				noDataExpression: true,
+				typeOptions: {
+					loadOptionsMethod: 'getOperations',
+					loadOptionsDependsOn: ['resource'],
+				},
+				default: '',
+			},
 			...repositoryDescription,
 			...issueDescription,
 			...issueCommentDescription,
+			...pullRequestDescription,
 			...userDescription,
 		],
 	};
 
 	methods = {
+		loadOptions: {
+			getOperations,
+		},
 		listSearch: {
 			getOwners,
 			getUsers,
 			getRepositories,
 			getIssues,
+			getPullRequests,
 		},
 	};
 }

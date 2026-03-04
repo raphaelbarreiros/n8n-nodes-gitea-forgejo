@@ -6,6 +6,9 @@ export const ownerSelect: INodeProperties = {
 	type: 'resourceLocator',
 	default: { mode: 'list', value: '' },
 	required: true,
+	typeOptions: {
+		loadOptionsDependsOn: ['resource', 'operation'],
+	},
 	modes: [
 		{
 			displayName: 'Repository Owner',
@@ -42,6 +45,9 @@ export const repositorySelect: INodeProperties = {
 	type: 'resourceLocator',
 	default: { mode: 'list', value: '' },
 	required: true,
+	typeOptions: {
+		loadOptionsDependsOn: ['resource', 'operation', 'owner'],
+	},
 	modes: [
 		{
 			displayName: 'Repository Name',
@@ -77,6 +83,9 @@ export const issueSelect: INodeProperties = {
 	type: 'resourceLocator',
 	default: { mode: 'list', value: '' },
 	required: true,
+	typeOptions: {
+		loadOptionsDependsOn: ['resource', 'operation', 'owner', 'repository'],
+	},
 	modes: [
 		{
 			displayName: 'Issue',
@@ -112,6 +121,9 @@ export const usernameSelect: INodeProperties = {
 	type: 'resourceLocator',
 	default: { mode: 'list', value: '' },
 	required: true,
+	typeOptions: {
+		loadOptionsDependsOn: ['resource', 'operation'],
+	},
 	modes: [
 		{
 			displayName: 'Username',
@@ -135,6 +147,44 @@ export const usernameSelect: INodeProperties = {
 					properties: {
 						regex: '[-_.0-9a-zA-Z]+',
 						errorMessage: 'Not a valid username',
+					},
+				},
+			],
+		},
+	],
+};
+
+export const pullRequestSelect: INodeProperties = {
+	displayName: 'Pull Request',
+	name: 'pullRequest',
+	type: 'resourceLocator',
+	default: { mode: 'list', value: '' },
+	required: true,
+	typeOptions: {
+		loadOptionsDependsOn: ['resource', 'operation', 'owner', 'repository'],
+	},
+	modes: [
+		{
+			displayName: 'Pull Request',
+			name: 'list',
+			type: 'list',
+			placeholder: 'Select a pull request...',
+			typeOptions: {
+				searchListMethod: 'getPullRequests',
+				searchable: true,
+			},
+		},
+		{
+			displayName: 'By Number',
+			name: 'number',
+			type: 'string',
+			placeholder: 'e.g. 42',
+			validation: [
+				{
+					type: 'regex',
+					properties: {
+						regex: '[0-9]+',
+						errorMessage: 'Not a valid pull request number',
 					},
 				},
 			],
