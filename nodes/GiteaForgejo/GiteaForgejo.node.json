@@ -1,0 +1,27 @@
+{
+	"node": "n8n-nodes-base.giteaForgejo",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/raphaelbarreiros/n8n-nodes-gitea-forgejo#credentials"
+			},
+			{
+				"url": "https://forgejo.org/docs/latest/user/api-usage/"
+			},
+			{
+				"url": "https://docs.gitea.com/usage/api-usage"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/raphaelbarreiros/n8n-nodes-gitea-forgejo"
+			},
+			{
+				"url": "https://forgejo.org/docs/latest/user/api-usage/"
+			}
+		]
+	}
+}
