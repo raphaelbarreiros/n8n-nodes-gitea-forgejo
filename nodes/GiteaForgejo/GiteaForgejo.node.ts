@@ -517,10 +517,10 @@ const operationRequestMethodExpression = `={{
 			getPersonFeed: 'GET',
 			getRepository: 'GET',
 			instanceActorInbox: 'POST',
-			instanceActorOutbox: 'GET',
+			instanceActorOutbox: 'POST',
 			personInbox: 'POST',
 			repositoryInbox: 'POST',
-			repositoryOutbox: 'GET',
+			repositoryOutbox: 'POST',
 		},
 		miscellaneous: {
 			getGitignoreTemplate: 'GET',
@@ -552,7 +552,7 @@ const operationRequestMethodExpression = `={{
 			getFiles: 'GET',
 			linkRepo: 'POST',
 			list: 'GET',
-			unlinkRepo: 'DELETE',
+			unlinkRepo: 'POST',
 		},
 		settings: {
 			getAPISettings: 'GET',

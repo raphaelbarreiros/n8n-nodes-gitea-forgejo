@@ -6,7 +6,7 @@ export async function executeMiscellaneousGetNodeInfo(
 	const items = this.getInputData();
 	const returnData: INodeExecutionData[] = [];
 	const credentials = await this.getCredentials<{ serverUrl: string }>('giteaForgejoApi');
-	const baseURL = credentials.serverUrl.replace(/\/$/, '');
+	const baseURL = `${credentials.serverUrl.replace(/\/$/, '')}/api/v1`;
 
 	for (let i = 0; i < items.length; i++) {
 		try {

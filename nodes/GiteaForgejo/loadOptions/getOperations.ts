@@ -2673,8 +2673,8 @@ const operationsByResource: Record<string, INodePropertyOptions[]> = {
 		{
 			name: 'Instance Actor Outbox',
 			value: 'instanceActorOutbox',
-			action: 'Get instance actor outbox',
-			description: 'Get the instance actor ActivityPub outbox',
+			action: 'Display instance actor outbox',
+			description: 'Display the instance actor ActivityPub outbox (always empty)',
 		},
 		{
 			name: 'Person Inbox',
@@ -2691,8 +2691,8 @@ const operationsByResource: Record<string, INodePropertyOptions[]> = {
 		{
 			name: 'Repository Outbox',
 			value: 'repositoryOutbox',
-			action: 'Get repository outbox',
-			description: 'Get the repository ActivityPub outbox',
+			action: 'Display repository outbox',
+			description: 'Display the repository ActivityPub outbox',
 		},
 	],
 	miscellaneous: [
