@@ -69,9 +69,6 @@ export const commitStatusGetManyByRefDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{

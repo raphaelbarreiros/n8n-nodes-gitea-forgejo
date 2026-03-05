@@ -528,9 +528,6 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
@@ -633,9 +630,6 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 	},
@@ -746,9 +740,6 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
@@ -812,9 +803,6 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 	},

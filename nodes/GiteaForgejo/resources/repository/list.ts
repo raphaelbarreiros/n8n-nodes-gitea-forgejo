@@ -71,9 +71,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -150,9 +147,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -228,9 +222,6 @@ export const repositoryListDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 		description: 'Max number of results to return',
@@ -325,9 +316,6 @@ export const repositoryListDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 		description: 'Max number of results to return',
@@ -479,9 +467,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -558,9 +543,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -636,9 +618,6 @@ export const repositoryListDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 		description: 'Max number of results to return',
@@ -887,9 +866,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -965,9 +941,6 @@ export const repositoryListDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 		description: 'Max number of results to return',
@@ -1142,9 +1115,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -1222,9 +1192,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -1301,9 +1268,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -1379,9 +1343,6 @@ export const repositoryListDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 		description: 'Max number of results to return',
@@ -1515,9 +1476,6 @@ export const repositoryListDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
@@ -1594,9 +1552,6 @@ export const repositoryListDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 	},

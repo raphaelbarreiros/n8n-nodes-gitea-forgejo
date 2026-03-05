@@ -57,9 +57,6 @@ export const issueGetManyDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 		description: 'Max number of results to return',
 	},
