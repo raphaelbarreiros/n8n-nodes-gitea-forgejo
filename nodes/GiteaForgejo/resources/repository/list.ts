@@ -86,7 +86,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetActionTasks,
+			show: {
+				...showOnlyForRepositoryGetActionTasks,
+				returnAllActionTasks: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -162,7 +165,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetPushMirrors,
+			show: {
+				...showOnlyForRepositoryGetPushMirrors,
+				returnAllPushMirrors: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -238,7 +244,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetActivityFeeds,
+			show: {
+				...showOnlyForRepositoryGetActivityFeeds,
+				returnAllActivityFeeds: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -332,7 +341,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetActionRuns,
+			show: {
+				...showOnlyForRepositoryGetActionRuns,
+				returnAllActionRuns: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -482,7 +494,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetActionSecrets,
+			show: {
+				...showOnlyForRepositoryGetActionSecrets,
+				returnAllActionSecrets: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -558,7 +573,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetActionVariables,
+			show: {
+				...showOnlyForRepositoryGetActionVariables,
+				returnAllActionVariables: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -634,7 +652,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetNotifications,
+			show: {
+				...showOnlyForRepositoryGetNotifications,
+				returnAllNotifications: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -881,7 +902,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetManyForks,
+			show: {
+				...showOnlyForRepositoryGetManyForks,
+				returnAllForks: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -957,7 +981,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetManyCommits,
+			show: {
+				...showOnlyForRepositoryGetManyCommits,
+				returnAllCommits: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1130,7 +1157,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetManyUsers,
+			show: {
+				...showOnlyForRepositoryGetManyUsers,
+				returnAllUsers: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1207,7 +1237,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetManyTopics,
+			show: {
+				...showOnlyForRepositoryGetManyTopics,
+				returnAllTopics: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1283,7 +1316,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetManyTags,
+			show: {
+				...showOnlyForRepositoryGetManyTags,
+				returnAllTags: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1359,7 +1395,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetTrackedTimes,
+			show: {
+				...showOnlyForRepositoryGetTrackedTimes,
+				returnAllTimes: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1491,7 +1530,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositoryGetMany,
+			show: {
+				...showOnlyForRepositoryGetMany,
+				returnAll: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1567,7 +1609,10 @@ export const repositoryListDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForRepositorySearch,
+			show: {
+				...showOnlyForRepositorySearch,
+				returnAllRepositorySearch: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {

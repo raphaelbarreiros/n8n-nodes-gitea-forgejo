@@ -201,7 +201,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueSearch,
+			show: {
+				...showOnlyForIssueSearch,
+				returnAllIssueSearch: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -538,7 +541,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueGetBlocks,
+			show: {
+				...showOnlyForIssueGetBlocks,
+				returnAllIssueBlocks: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -614,7 +620,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueGetDependencies,
+			show: {
+				...showOnlyForIssueGetDependencies,
+				returnAllIssueDependencies: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -690,7 +699,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueGetSubscriptions,
+			show: {
+				...showOnlyForIssueGetSubscriptions,
+				returnAllIssueSubscriptions: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -766,7 +778,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueGetReactions,
+			show: {
+				...showOnlyForIssueGetReactions,
+				returnAllIssueReactions: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1119,7 +1134,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueGetTimeline,
+			show: {
+				...showOnlyForIssueGetTimeline,
+				returnAllIssueTimeline: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -1234,7 +1252,10 @@ export const issueExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueGetTimes,
+			show: {
+				...showOnlyForIssueGetTimes,
+				returnAllIssueTimes: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {

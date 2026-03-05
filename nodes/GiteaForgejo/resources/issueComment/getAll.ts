@@ -72,7 +72,10 @@ export const issueCommentGetManyDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueCommentGetMany,
+			show: {
+				...showOnlyForIssueCommentGetMany,
+				returnAll: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {

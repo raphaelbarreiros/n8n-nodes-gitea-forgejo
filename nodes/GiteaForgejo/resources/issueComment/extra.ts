@@ -262,7 +262,10 @@ export const issueCommentExtraDescription: INodeProperties[] = [
 		},
 		default: 1,
 		displayOptions: {
-			show: showOnlyForIssueCommentGetRepositoryComments,
+			show: {
+				...showOnlyForIssueCommentGetRepositoryComments,
+				returnAllRepositoryComments: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {

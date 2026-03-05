@@ -72,7 +72,10 @@ export const pullRequestGetManyDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForPullRequestGetMany,
+			show: {
+				...showOnlyForPullRequestGetMany,
+				returnAll: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
