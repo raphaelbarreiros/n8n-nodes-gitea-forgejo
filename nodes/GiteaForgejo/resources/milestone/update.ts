@@ -56,6 +56,10 @@ export const milestoneUpdateDescription: INodeProperties[] = [
 		type: 'options',
 		options: [
 			{
+				name: 'No Change',
+				value: '',
+			},
+			{
 				name: 'Closed',
 				value: 'closed',
 			},
@@ -64,7 +68,7 @@ export const milestoneUpdateDescription: INodeProperties[] = [
 				value: 'open',
 			},
 		],
-		default: 'open',
+		default: '',
 		description: 'State of the milestone',
 		displayOptions: {
 			show: showOnlyForMilestoneUpdate,

@@ -8,7 +8,7 @@ const showOnlyForRepositoryContentUpdate = {
 export const repositoryContentUpdateDescription: INodeProperties[] = [
 	{
 		displayName: 'File Path',
-		name: 'filepath',
+		name: 'filePath',
 		type: 'string',
 		required: true,
 		default: '',

@@ -8,7 +8,7 @@ const showOnlyForRepositoryContentDelete = {
 export const repositoryContentDeleteDescription: INodeProperties[] = [
 	{
 		displayName: 'File Path',
-		name: 'filepath',
+		name: 'filePath',
 		type: 'string',
 		required: true,
 		default: '',

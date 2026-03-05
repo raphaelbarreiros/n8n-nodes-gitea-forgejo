@@ -34,13 +34,26 @@ export const releaseUpdateDescription: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Set Draft',
+		name: 'setDraft',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to update the draft state of the release',
+		displayOptions: {
+			show: showOnlyForReleaseUpdate,
+		},
+	},
+	{
 		displayName: 'Draft',
 		name: 'draft',
 		type: 'boolean',
 		default: false,
 		description: 'Whether this release is a draft',
 		displayOptions: {
-			show: showOnlyForReleaseUpdate,
+			show: {
+				...showOnlyForReleaseUpdate,
+				setDraft: [true],
+			},
 		},
 		routing: {
 			send: {
@@ -50,13 +63,26 @@ export const releaseUpdateDescription: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Set Hide Archive Links',
+		name: 'setHideArchiveLinks',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to update the hide archive links state of the release',
+		displayOptions: {
+			show: showOnlyForReleaseUpdate,
+		},
+	},
+	{
 		displayName: 'Hide Archive Links',
 		name: 'hideArchiveLinks',
 		type: 'boolean',
 		default: false,
 		description: 'Whether archive links should be hidden',
 		displayOptions: {
-			show: showOnlyForReleaseUpdate,
+			show: {
+				...showOnlyForReleaseUpdate,
+				setHideArchiveLinks: [true],
+			},
 		},
 		routing: {
 			send: {
@@ -83,13 +109,26 @@ export const releaseUpdateDescription: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Set Pre-Release',
+		name: 'setPrerelease',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to update the pre-release state of the release',
+		displayOptions: {
+			show: showOnlyForReleaseUpdate,
+		},
+	},
+	{
 		displayName: 'Pre-Release',
 		name: 'prerelease',
 		type: 'boolean',
 		default: false,
 		description: 'Whether this release is marked as pre-release',
 		displayOptions: {
-			show: showOnlyForReleaseUpdate,
+			show: {
+				...showOnlyForReleaseUpdate,
+				setPrerelease: [true],
+			},
 		},
 		routing: {
 			send: {

@@ -14,13 +14,26 @@ export const labelUpdateDescription: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Set Archived',
+		name: 'setArchived',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to update the archived state of the label',
+		displayOptions: {
+			show: showOnlyForLabelUpdate,
+		},
+	},
+	{
 		displayName: 'Archived',
 		name: 'isArchived',
 		type: 'boolean',
 		default: false,
 		description: 'Whether this label should be archived',
 		displayOptions: {
-			show: showOnlyForLabelUpdate,
+			show: {
+				...showOnlyForLabelUpdate,
+				setArchived: [true],
+			},
 		},
 		routing: {
 			send: {
@@ -77,13 +90,26 @@ export const labelUpdateDescription: INodeProperties[] = [
 		},
 	},
 	{
+		displayName: 'Set Exclusive',
+		name: 'setExclusive',
+		type: 'boolean',
+		default: false,
+		description: 'Whether to update the exclusive state of the label',
+		displayOptions: {
+			show: showOnlyForLabelUpdate,
+		},
+	},
+	{
 		displayName: 'Exclusive',
 		name: 'exclusive',
 		type: 'boolean',
 		default: false,
 		description: 'Whether this label should be exclusive',
 		displayOptions: {
-			show: showOnlyForLabelUpdate,
+			show: {
+				...showOnlyForLabelUpdate,
+				setExclusive: [true],
+			},
 		},
 		routing: {
 			send: {
