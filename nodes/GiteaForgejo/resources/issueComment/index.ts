@@ -2,6 +2,7 @@ import type { INodeProperties } from 'n8n-workflow';
 import { issueSelect, ownerSelect, repositorySelect } from '../../shared/descriptions';
 import { issueCommentGetManyDescription } from './getAll';
 import { issueCommentCreateDescription } from './create';
+import { issueCommentExtraDescription } from './extra';
 
 const showOnlyForIssueComments = {
 	resource: ['issueComment'],
@@ -23,9 +24,13 @@ export const issueCommentDescription: INodeProperties[] = [
 	{
 		...issueSelect,
 		displayOptions: {
-			show: showOnlyForIssueComments,
+			show: {
+				...showOnlyForIssueComments,
+				operation: ['create', 'getAll'],
+			},
 		},
 	},
 	...issueCommentGetManyDescription,
 	...issueCommentCreateDescription,
+	...issueCommentExtraDescription,
 ];
