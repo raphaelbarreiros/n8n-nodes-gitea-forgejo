@@ -187,9 +187,6 @@ export const issueExtraDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
@@ -527,9 +524,6 @@ export const issueExtraDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
@@ -605,9 +599,6 @@ export const issueExtraDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 	},
@@ -685,9 +676,6 @@ export const issueExtraDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
@@ -763,9 +751,6 @@ export const issueExtraDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 	},
@@ -1120,9 +1105,6 @@ export const issueExtraDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
@@ -1237,9 +1219,6 @@ export const issueExtraDescription: INodeProperties[] = [
 			send: {
 				type: 'query',
 				property: 'limit',
-			},
-			output: {
-				maxResults: '={{$value}}',
 			},
 		},
 	},

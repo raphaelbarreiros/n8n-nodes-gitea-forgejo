@@ -58,9 +58,6 @@ export const labelGetManyDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{

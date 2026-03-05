@@ -58,9 +58,6 @@ export const milestoneGetManyDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{

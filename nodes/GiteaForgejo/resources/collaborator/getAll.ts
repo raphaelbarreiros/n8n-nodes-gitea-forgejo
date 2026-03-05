@@ -58,9 +58,6 @@ export const collaboratorGetManyDescription: INodeProperties[] = [
 				type: 'query',
 				property: 'limit',
 			},
-			output: {
-				maxResults: '={{$value}}',
-			},
 		},
 	},
 	{
