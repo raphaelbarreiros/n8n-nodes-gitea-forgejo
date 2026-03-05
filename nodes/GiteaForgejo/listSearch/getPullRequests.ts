@@ -50,7 +50,7 @@ export async function getPullRequests(
 		url: item.html_url,
 	}));
 
-	const nextPaginationToken = response.length === limit ? String(page + 1) : undefined;
+	const nextPaginationToken = (response ?? []).length === limit ? String(page + 1) : undefined;
 
 	return { results, paginationToken: nextPaginationToken };
 }

@@ -3,6 +3,7 @@ import { ownerSelect, repositorySelect } from '../../shared/descriptions';
 import { pullRequestGetManyDescription } from './getAll';
 import { pullRequestGetDescription } from './get';
 import { pullRequestCreateDescription } from './create';
+import { pullRequestExtraDescription } from './extra';
 import { pullRequestUpdateDescription } from './update';
 import { pullRequestMergeDescription } from './merge';
 
@@ -26,6 +27,7 @@ export const pullRequestDescription: INodeProperties[] = [
 	...pullRequestGetManyDescription,
 	...pullRequestGetDescription,
 	...pullRequestCreateDescription,
+	...pullRequestExtraDescription,
 	...pullRequestUpdateDescription,
 	...pullRequestMergeDescription,
 ];
