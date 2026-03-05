@@ -12,21 +12,95 @@ https://docs.n8n.io/integrations/community-nodes/installation/
 
 ## Operations
 
-This node currently supports:
+This node covers all non-deprecated Gitea/Forgejo API v1 endpoints across every resource group.
 
-- Repository
-  - Get
-  - Get Many (by owner)
-- Issue
-  - Get
-  - Get Many
-  - Create
-- Issue Comment
-  - Get Many (for an issue)
-  - Create
-- User
-  - Get
-  - Get Authenticated
+### Admin (42 operations)
+
+Quota groups & rules, system hooks, cron jobs, runner registration, user management (create/update/delete/rename, emails, public keys, orgs, repos), unadopted repositories, email search.
+
+### Branch (5 operations)
+
+Create, Delete, Get, Get Many, Update.
+
+### Branch Protection (5 operations)
+
+Create, Delete, Get, Get Many, Update.
+
+### Collaborator (5 operations)
+
+Add, Get, Get Many, Get Permission, Remove.
+
+### Commit Status (4 operations)
+
+Create, Get Combined By Ref, Get Many By Ref, Get Many By SHA.
+
+### Issue (36 operations)
+
+Full issue lifecycle: create/update/delete, blocks & dependencies, reactions, subscriptions, time tracking, stopwatches, pinning, attachments, timeline, search.
+
+### Issue Comment (14 operations)
+
+Create/update/delete, attachments, reactions, repository-wide listing.
+
+### Issue Label (5 operations)
+
+Add, Get Many, Remove, Remove All, Replace.
+
+### Label (5 operations)
+
+Create, Delete, Get, Get Many, Update.
+
+### Milestone (5 operations)
+
+Create, Delete, Get, Get Many, Update.
+
+### Organization (49 operations)
+
+Create/update/delete, members & public members, teams, labels, hooks, action variables & secrets, activity feeds, quota, runner registration, user blocking, rename.
+
+### Pull Request (24 operations)
+
+Create/update, merge, auto-merge, reviews (create/submit/dismiss/delete), review comments, review requests, commits, files, diff/patch, branch update.
+
+### Release (8 operations)
+
+Create, Delete, Delete By Tag, Get, Get Many, Get By Tag, Get Latest, Update.
+
+### Release Attachment (5 operations)
+
+Create, Delete, Get, Get Many, Update.
+
+### Repository (101 operations)
+
+Full `/repos/*` parity (248/248 non-deprecated swagger paths): CRUD, forks, topics, flags, push mirrors, tags & tag protections, git objects (blobs, trees, commits, refs, notes), action runs/tasks/variables/secrets, issue config & templates, pinned issues/PRs, notifications, assignees, reviewers, stargazers, subscribers, tracked times, signing key, editor config, languages, archive, raw files, fork sync, transfer, wiki, and more.
+
+### Repository Content (6 operations)
+
+Change Many, Create, Delete, Get, Get Root, Update.
+
+### Repository Key (4 operations)
+
+Create, Delete, Get, Get Many.
+
+### Repository Template (1 operation)
+
+Generate.
+
+### Team (12 operations)
+
+Add Member, Add Repo, Delete, Get, Get Activity Feeds, Get Many Members, Get Many Repos, Get Member, Get Repo, Remove Member, Remove Repo, Update.
+
+### User (62 operations)
+
+Authenticated user: emails, GPG keys, SSH keys, OAuth2 applications, hooks, starred repos, followed users, blocked users, action variables & secrets, quota, runner jobs & registration, settings, avatar, stopwatches, subscriptions, teams, tracked times. Public user lookup by username.
+
+### Users (17 operations)
+
+Public profile lookups: get, search, followers, following, GPG keys, SSH keys, repos, starred, subscriptions, orgs & permissions, heatmap, tokens (admin).
+
+### Webhook (10 operations)
+
+Create, Delete, Get, Get Many, Test, Update, plus Git hook variants (Get, Get Many, Delete, Update).
 
 ## Credentials
 
@@ -64,4 +138,5 @@ The credential test calls `GET /api/v1/user`.
 
 ## Version History
 
-- 0.1.0: Initial Gitea/Forgejo node implementation (Repository, Issue, Issue Comment, User)
+- **0.1.1**: Full non-deprecated Gitea/Forgejo API v1 parity — 431 operations across 23 resources covering all swagger resource groups (`/repos/*`, `/user/*`, `/users/*`, `/orgs/*`, `/admin/*`, `/teams/*`). Adds Admin, Organization, Team, Users resources; expands User to 62 ops and Repository to 101 ops. Includes dynamic list-search helpers, shared field descriptors, and routing verification tooling.
+- **0.1.0**: Initial Gitea/Forgejo node implementation (Repository, Issue, Issue Comment, User)
