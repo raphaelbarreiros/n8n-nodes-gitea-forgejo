@@ -44,7 +44,7 @@ export const labelUpdateDescription: INodeProperties[] = [
 		name: 'color',
 		type: 'color',
 		default: '#f29513',
-		description: 'Label color in hex format without #',
+		description: 'Label color in hex (leading # is OK; it will be removed before sending)',
 		displayOptions: {
 			show: {
 				...showOnlyForLabelUpdate,
