@@ -29,6 +29,7 @@ import { executeIssueCommentCreateAttachment } from './resources/issueComment/cr
 import { issueLabelDescription } from './resources/issueLabel';
 import { labelDescription } from './resources/label';
 import { miscellaneousDescription } from './resources/miscellaneous';
+import { executeMiscellaneousGetNodeInfo } from './resources/miscellaneous/getNodeInfo';
 import { executeMiscellaneousRenderMarkdownRaw } from './resources/miscellaneous/renderMarkdownRaw';
 import { milestoneDescription } from './resources/milestone';
 import { notificationDescription } from './resources/notification';
@@ -516,10 +517,10 @@ const operationRequestMethodExpression = `={{
 			getPersonFeed: 'GET',
 			getRepository: 'GET',
 			instanceActorInbox: 'POST',
-			instanceActorOutbox: 'POST',
+			instanceActorOutbox: 'GET',
 			personInbox: 'POST',
 			repositoryInbox: 'POST',
-			repositoryOutbox: 'POST',
+			repositoryOutbox: 'GET',
 		},
 		miscellaneous: {
 			getGitignoreTemplate: 'GET',
@@ -551,7 +552,7 @@ const operationRequestMethodExpression = `={{
 			getFiles: 'GET',
 			linkRepo: 'POST',
 			list: 'GET',
-			unlinkRepo: 'POST',
+			unlinkRepo: 'DELETE',
 		},
 		settings: {
 			getAPISettings: 'GET',
@@ -2328,6 +2329,7 @@ export class GiteaForgejo implements INodeType {
 			createAttachment: executeIssueCommentCreateAttachment,
 		},
 		miscellaneous: {
+			getNodeInfo: executeMiscellaneousGetNodeInfo,
 			renderMarkdownRaw: executeMiscellaneousRenderMarkdownRaw,
 		},
 		releaseAttachment: {

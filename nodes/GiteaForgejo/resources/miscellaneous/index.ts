@@ -50,7 +50,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 		options: [
 			{
 				displayName: 'Context',
-				name: 'Context',
+				name: 'context',
 				type: 'string',
 				default: '',
 				description: 'Context to render the markdown in',
@@ -58,7 +58,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 			},
 			{
 				displayName: 'Mode',
-				name: 'Mode',
+				name: 'mode',
 				type: 'options',
 				default: 'markdown',
 				options: [
@@ -70,7 +70,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 			},
 			{
 				displayName: 'Wiki',
-				name: 'Wiki',
+				name: 'wiki',
 				type: 'boolean',
 				default: false,
 				description: 'Whether this is a wiki page',
@@ -120,7 +120,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 		options: [
 			{
 				displayName: 'Branch Path',
-				name: 'BranchPath',
+				name: 'branchPath',
 				type: 'string',
 				default: '',
 				description: 'Current branch path where the form gets posted',
@@ -130,7 +130,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 			},
 			{
 				displayName: 'Context',
-				name: 'Context',
+				name: 'context',
 				type: 'string',
 				default: '',
 				description: 'Context to render the markup in',
@@ -138,7 +138,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 			},
 			{
 				displayName: 'File Path',
-				name: 'FilePath',
+				name: 'filePath',
 				type: 'string',
 				default: '',
 				description: 'File path for detecting extension in file mode',
@@ -148,7 +148,7 @@ export const miscellaneousDescription: INodeProperties[] = [
 			},
 			{
 				displayName: 'Wiki',
-				name: 'Wiki',
+				name: 'wiki',
 				type: 'boolean',
 				default: false,
 				description: 'Whether this is a wiki page',

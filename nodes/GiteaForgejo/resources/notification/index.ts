@@ -25,7 +25,7 @@ export const notificationDescription: INodeProperties[] = [
 		name: 'notificationId',
 		type: 'number',
 		required: true,
-		default: 0,
+		default: 1,
 		typeOptions: {
 			minValue: 1,
 		},
