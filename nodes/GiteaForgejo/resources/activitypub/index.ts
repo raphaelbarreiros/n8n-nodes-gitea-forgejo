@@ -42,10 +42,11 @@ export const activityPubDescription: INodeProperties[] = [
 	{
 		displayName: 'Activity ID',
 		name: 'activityId',
-		type: 'string',
+		type: 'number',
 		required: true,
-		default: '',
-		description: 'The ID of the activity',
+		default: 1,
+		typeOptions: { minValue: 1 },
+		description: 'The numeric ID of the activity',
 		displayOptions: {
 			show: {
 				resource: [r],

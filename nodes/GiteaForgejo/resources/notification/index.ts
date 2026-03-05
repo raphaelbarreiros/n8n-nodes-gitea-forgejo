@@ -133,7 +133,7 @@ export const notificationDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						qs: {
-							'status-types': '={{$value.split(",").map(s => s.trim())}}',
+							'status-types': '={{$value ? $value.split(",").map(s => s.trim()) : undefined}}',
 						},
 					},
 				},
@@ -143,12 +143,11 @@ export const notificationDescription: INodeProperties[] = [
 				name: 'subjectType',
 				type: 'string',
 				default: '',
-				description:
-					'Comma-separated list of subject types to filter (e.g. issue,pull,commit,repository)',
+				description: 'Comma-separated list of subject types to filter (e.g. issue,pull,repository)',
 				routing: {
 					request: {
 						qs: {
-							'subject-type': '={{$value.split(",").map(s => s.trim())}}',
+							'subject-type': '={{$value ? $value.split(",").map(s => s.trim()) : undefined}}',
 						},
 					},
 				},
@@ -207,7 +206,7 @@ export const notificationDescription: INodeProperties[] = [
 				routing: {
 					request: {
 						qs: {
-							'status-types': '={{$value.split(",").map(s => s.trim())}}',
+							'status-types': '={{$value ? $value.split(",").map(s => s.trim()) : undefined}}',
 						},
 					},
 				},

@@ -29,6 +29,7 @@ import { executeIssueCommentCreateAttachment } from './resources/issueComment/cr
 import { issueLabelDescription } from './resources/issueLabel';
 import { labelDescription } from './resources/label';
 import { miscellaneousDescription } from './resources/miscellaneous';
+import { executeMiscellaneousRenderMarkdownRaw } from './resources/miscellaneous/renderMarkdownRaw';
 import { milestoneDescription } from './resources/milestone';
 import { notificationDescription } from './resources/notification';
 import { packageDescription } from './resources/package';
@@ -2325,6 +2326,9 @@ export class GiteaForgejo implements INodeType {
 		},
 		issueComment: {
 			createAttachment: executeIssueCommentCreateAttachment,
+		},
+		miscellaneous: {
+			renderMarkdownRaw: executeMiscellaneousRenderMarkdownRaw,
 		},
 		releaseAttachment: {
 			create: executeReleaseAttachmentCreate,

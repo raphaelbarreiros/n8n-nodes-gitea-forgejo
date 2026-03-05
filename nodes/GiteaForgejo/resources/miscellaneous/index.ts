@@ -30,7 +30,12 @@ export const miscellaneousDescription: INodeProperties[] = [
 			show: { resource: [r], operation: ['renderMarkdown', 'renderMarkdownRaw'] },
 		},
 		routing: {
-			send: { type: 'body', property: 'Text', value: '={{$value || undefined}}' },
+			send: {
+				type: 'body',
+				property: 'Text',
+				value:
+					'={{$parameter.operation !== "renderMarkdownRaw" ? ($value || undefined) : undefined}}',
+			},
 		},
 	},
 	{
