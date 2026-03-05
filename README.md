@@ -162,6 +162,7 @@ The credential test calls `GET /api/v1/user`.
 
 ## Version History
 
+- **0.1.3**: Fixes infinite pagination loop on "Return All" — the user-facing Page field was injecting `page=1` on every paginated request, overriding the engine's page counter. All 18 affected `getAll` operations now hide the Page field when Return All is enabled.
 - **0.1.2**: Complete resource coverage — adds Activity Pub (11 ops), Miscellaneous (13 ops), Notification (7 ops), Package (6 ops), Setting (4 ops). Fixes safe pagination in all list-search helpers, boolean field guards in Release Update, and various code-quality improvements from PR review.
 - **0.1.1**: Full non-deprecated Gitea/Forgejo API v1 parity — 431 operations across 23 resources covering all swagger resource groups. Adds Admin, Organization, Team, Users, Pull Request, Release, Issue Label, Wiki Page, Repository Content, Repository Key, Repository Template, Branch Protection, Commit Status, Collaborator, Milestone, Label, Webhook, Release Attachment. Includes dynamic list-search helpers and shared field descriptors.
 - **0.1.0**: Initial release — Repository, Issue, Issue Comment, User resources.
