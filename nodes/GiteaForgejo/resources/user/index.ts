@@ -159,7 +159,13 @@ export const userDescription: INodeProperties[] = [
 		placeholder: 'e.g. user@example.com',
 		description: 'Comma-separated list of email addresses',
 		displayOptions: { show: showAddEmail },
-		routing: { send: { property: 'emails', type: 'body', value: '={{ [$value] }}' } },
+		routing: {
+			send: {
+				property: 'emails',
+				type: 'body',
+				value: '={{ $value.split(",").map(s => s.trim()).filter(Boolean) }}',
+			},
+		},
 	},
 
 	// --- Body params: deleteEmail ---
@@ -172,7 +178,13 @@ export const userDescription: INodeProperties[] = [
 		placeholder: 'e.g. user@example.com',
 		description: 'Comma-separated list of email addresses to delete',
 		displayOptions: { show: showDeleteEmail },
-		routing: { send: { property: 'emails', type: 'body', value: '={{ [$value] }}' } },
+		routing: {
+			send: {
+				property: 'emails',
+				type: 'body',
+				value: '={{ $value.split(",").map(s => s.trim()).filter(Boolean) }}',
+			},
+		},
 	},
 
 	// --- Body params: createSSHKey ---
@@ -380,7 +392,13 @@ export const userDescription: INodeProperties[] = [
 		placeholder: 'e.g. https://example.com/callback',
 		description: 'Comma-separated list of redirect URIs',
 		displayOptions: { show: showOAuth2AppWrite },
-		routing: { send: { property: 'redirect_uris', type: 'body', value: '={{ [$value] }}' } },
+		routing: {
+			send: {
+				property: 'redirect_uris',
+				type: 'body',
+				value: '={{ $value.split(",").map(s => s.trim()).filter(Boolean) }}',
+			},
+		},
 	},
 	{
 		displayName: 'Confidential Client',

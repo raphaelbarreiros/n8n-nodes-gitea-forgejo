@@ -7,13 +7,13 @@ const showOnlyForReleaseAttachmentDelete = {
 
 export const releaseAttachmentDeleteDescription: INodeProperties[] = [
 	{
-		displayName: 'Delete Permanently',
+		displayName:
+			'Warning: This action permanently deletes the release attachment and cannot be undone.',
 		name: 'confirmDelete',
-		type: 'boolean',
-		default: true,
+		type: 'notice',
+		default: '',
 		displayOptions: {
 			show: showOnlyForReleaseAttachmentDelete,
 		},
-		description: 'Whether to permanently delete this release attachment',
 	},
 ];

@@ -12,7 +12,7 @@ export const labelCreateDescription: INodeProperties[] = [
 		type: 'color',
 		required: true,
 		default: '#f29513',
-		description: 'Label color in hex format without #',
+		description: 'Label color in hex (leading # is OK; it will be removed before sending)',
 		displayOptions: {
 			show: showOnlyForLabelCreate,
 		},

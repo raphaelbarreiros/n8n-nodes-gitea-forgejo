@@ -70,10 +70,9 @@ export const usersDescription: INodeProperties[] = [
 	{
 		displayName: 'Token ID',
 		name: 'tokenId',
-		type: 'string',
-		typeOptions: { password: true },
+		type: 'number',
 		required: true,
-		default: '',
+		default: 0,
 		placeholder: 'e.g. 5',
 		displayOptions: { show: showTokenId },
 	},
