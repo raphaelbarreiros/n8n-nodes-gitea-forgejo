@@ -1,9 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
-import { ownerSelect, repositorySelect, usernameSelect } from '../../shared/descriptions';
+import { ownerSelect, repositorySelect } from '../../shared/descriptions';
 
 const r = 'user';
 
-const showGet = { resource: [r], operation: ['get'] };
 const showTargetUsername = {
 	resource: [r],
 	operation: ['blockUser', 'checkFollowing', 'follow', 'unblockUser', 'unfollow'],
@@ -72,10 +71,6 @@ const paginatedOps = [
 
 export const userDescription: INodeProperties[] = [
 	// --- Path params ---
-	{
-		...usernameSelect,
-		displayOptions: { show: showGet },
-	},
 	{
 		displayName: 'Target Username',
 		name: 'targetUsername',

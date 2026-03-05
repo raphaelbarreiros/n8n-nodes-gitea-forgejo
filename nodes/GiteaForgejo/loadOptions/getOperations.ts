@@ -2171,12 +2171,6 @@ const operationsByResource: Record<string, INodePropertyOptions[]> = {
 			description: 'Follow a user',
 		},
 		{
-			name: 'Get',
-			value: 'get',
-			action: 'Get a user by username',
-			description: 'Get a user by username',
-		},
-		{
 			name: 'Get Action Variable',
 			value: 'getActionVariable',
 			action: 'Get an actions variable',

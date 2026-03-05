@@ -440,7 +440,6 @@ const operationRequestMethodExpression = `={{
 			deleteOAuth2Application: 'DELETE',
 			deleteSSHKey: 'DELETE',
 			follow: 'PUT',
-			get: 'GET',
 			getActionVariable: 'GET',
 			getActionVariables: 'GET',
 			getAuthenticated: 'GET',
@@ -1793,21 +1792,21 @@ const operationRequestUrlExpression = `={{
 				'/' +
 				$parameter.repository +
 				'/contents/' +
-				$parameter.filepath,
+				$parameter.filePath,
 			delete:
 				'/repos/' +
 				$parameter.owner +
 				'/' +
 				$parameter.repository +
 				'/contents/' +
-				$parameter.filepath,
+				$parameter.filePath,
 			get:
 				'/repos/' +
 				$parameter.owner +
 				'/' +
 				$parameter.repository +
 				'/contents/' +
-				$parameter.filepath,
+				$parameter.filePath,
 			getRoot: '/repos/' + $parameter.owner + '/' + $parameter.repository + '/contents',
 			update:
 				'/repos/' +
@@ -1815,7 +1814,7 @@ const operationRequestUrlExpression = `={{
 				'/' +
 				$parameter.repository +
 				'/contents/' +
-				$parameter.filepath,
+				$parameter.filePath,
 		},
 		repositoryKey: {
 			create: '/repos/' + $parameter.owner + '/' + $parameter.repository + '/keys',
@@ -1872,7 +1871,6 @@ const operationRequestUrlExpression = `={{
 			deleteOAuth2Application: '/user/applications/oauth2/' + $parameter.oauth2AppId,
 			deleteSSHKey: '/user/keys/' + $parameter.sshKeyId,
 			follow: '/user/following/' + $parameter.targetUsername,
-			get: '/users/' + $parameter.username,
 			getActionVariable: '/user/actions/variables/' + $parameter.actionVariableName,
 			getActionVariables: '/user/actions/variables',
 			getAuthenticated: '/user',
