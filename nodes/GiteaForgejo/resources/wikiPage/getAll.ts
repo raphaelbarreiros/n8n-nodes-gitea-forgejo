@@ -71,7 +71,10 @@ export const wikiPageGetManyDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForWikiPageGetMany,
+			show: {
+				...showOnlyForWikiPageGetMany,
+				returnAll: [false],
+			},
 		},
 		default: 1,
 		description: 'Page number of results to return (1-based)',

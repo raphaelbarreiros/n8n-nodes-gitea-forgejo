@@ -71,7 +71,10 @@ export const milestoneGetManyDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForMilestoneGetMany,
+			show: {
+				...showOnlyForMilestoneGetMany,
+				returnAll: [false],
+			},
 		},
 		default: 1,
 		description: 'Page number of results to return (1-based)',

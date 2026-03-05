@@ -542,7 +542,10 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForPullRequestGetCommits,
+			show: {
+				...showOnlyForPullRequestGetCommits,
+				returnAllPullRequestCommits: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -645,7 +648,10 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForPullRequestGetFiles,
+			show: {
+				...showOnlyForPullRequestGetFiles,
+				returnAllPullRequestFiles: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -754,7 +760,10 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForPullRequestGetReviews,
+			show: {
+				...showOnlyForPullRequestGetReviews,
+				returnAllPullRequestReviews: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {
@@ -818,7 +827,10 @@ export const pullRequestExtraDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForPullRequestGetReviewComments,
+			show: {
+				...showOnlyForPullRequestGetReviewComments,
+				returnAllPullRequestReviewComments: [false],
+			},
 		},
 		description: 'Page number of results to return (1-based)',
 		routing: {

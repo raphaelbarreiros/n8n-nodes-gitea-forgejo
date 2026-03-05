@@ -82,7 +82,10 @@ export const commitStatusGetManyByShaDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForCommitStatusGetManyBySha,
+			show: {
+				...showOnlyForCommitStatusGetManyBySha,
+				returnAll: [false],
+			},
 		},
 		default: 1,
 		description: 'Page number of results to return (1-based)',

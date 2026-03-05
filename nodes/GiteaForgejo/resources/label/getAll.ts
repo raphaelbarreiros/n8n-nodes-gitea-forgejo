@@ -71,7 +71,10 @@ export const labelGetManyDescription: INodeProperties[] = [
 			minValue: 1,
 		},
 		displayOptions: {
-			show: showOnlyForLabelGetMany,
+			show: {
+				...showOnlyForLabelGetMany,
+				returnAll: [false],
+			},
 		},
 		default: 1,
 		description: 'Page number of results to return (1-based)',
