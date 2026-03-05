@@ -8,7 +8,7 @@ const showOnlyForRepositoryContentGet = {
 export const repositoryContentGetDescription: INodeProperties[] = [
 	{
 		displayName: 'File Path',
-		name: 'filepath',
+		name: 'filePath',
 		type: 'string',
 		required: true,
 		default: '',
