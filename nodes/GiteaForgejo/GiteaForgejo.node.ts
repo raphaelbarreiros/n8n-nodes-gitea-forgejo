@@ -17,6 +17,7 @@ import { getRepositories } from './listSearch/getRepositories';
 import { getRepositoryKeys } from './listSearch/getRepositoryKeys';
 import { getUsers } from './listSearch/getUsers';
 import { getWebhooks } from './listSearch/getWebhooks';
+import { activityPubDescription } from './resources/activitypub';
 import { branchDescription } from './resources/branch';
 import { branchProtectionDescription } from './resources/branchProtection';
 import { collaboratorDescription } from './resources/collaborator';
@@ -27,7 +28,10 @@ import { issueCommentDescription } from './resources/issueComment';
 import { executeIssueCommentCreateAttachment } from './resources/issueComment/createAttachment';
 import { issueLabelDescription } from './resources/issueLabel';
 import { labelDescription } from './resources/label';
+import { miscellaneousDescription } from './resources/miscellaneous';
 import { milestoneDescription } from './resources/milestone';
+import { notificationDescription } from './resources/notification';
+import { packageDescription } from './resources/package';
 import { pullRequestDescription } from './resources/pullRequest';
 import { releaseDescription } from './resources/release';
 import { executeReleaseAttachmentCreate } from './resources/releaseAttachment/create';
@@ -36,6 +40,7 @@ import { repositoryDescription } from './resources/repository';
 import { repositoryContentDescription } from './resources/repositoryContent';
 import { repositoryKeyDescription } from './resources/repositoryKey';
 import { repositoryTemplateDescription } from './resources/repositoryTemplate';
+import { settingsDescription } from './resources/settings';
 import { adminDescription } from './resources/admin';
 import { organizationDescription } from './resources/organization';
 import { teamDescription } from './resources/team';
@@ -501,6 +506,57 @@ const operationRequestMethodExpression = `={{
 			getOrgPermissions: 'GET',
 			getTokens: 'GET',
 			search: 'GET',
+		},
+		activitypub: {
+			getInstanceActor: 'GET',
+			getPerson: 'GET',
+			getPersonActivity: 'GET',
+			getPersonActivityNote: 'GET',
+			getPersonFeed: 'GET',
+			getRepository: 'GET',
+			instanceActorInbox: 'POST',
+			instanceActorOutbox: 'POST',
+			personInbox: 'POST',
+			repositoryInbox: 'POST',
+			repositoryOutbox: 'POST',
+		},
+		miscellaneous: {
+			getGitignoreTemplate: 'GET',
+			getGitignoreTemplates: 'GET',
+			getLabelTemplate: 'GET',
+			getLabelTemplates: 'GET',
+			getLicenseTemplate: 'GET',
+			getLicenseTemplates: 'GET',
+			getNodeInfo: 'GET',
+			getSigningKey: 'GET',
+			getSSHSigningKey: 'GET',
+			getVersion: 'GET',
+			renderMarkdown: 'POST',
+			renderMarkdownRaw: 'POST',
+			renderMarkup: 'POST',
+		},
+		notification: {
+			getList: 'GET',
+			getNewAvailable: 'GET',
+			getRepoList: 'GET',
+			getThread: 'GET',
+			readList: 'PUT',
+			readRepoList: 'PUT',
+			readThread: 'PATCH',
+		},
+		package: {
+			delete: 'DELETE',
+			get: 'GET',
+			getFiles: 'GET',
+			linkRepo: 'POST',
+			list: 'GET',
+			unlinkRepo: 'POST',
+		},
+		settings: {
+			getAPISettings: 'GET',
+			getAttachmentSettings: 'GET',
+			getRepositorySettings: 'GET',
+			getUISettings: 'GET',
 		},
 		wikiPage: {
 			create: 'POST',
@@ -1933,6 +1989,57 @@ const operationRequestUrlExpression = `={{
 			getTokens: '/users/' + $parameter.username + '/tokens',
 			search: '/users/search',
 		},
+		activitypub: {
+			getInstanceActor: '/activitypub/actor',
+			getPerson: '/activitypub/user-id/' + $parameter.userId,
+			getPersonActivity: '/activitypub/user-id/' + $parameter.userId + '/activities/' + $parameter.activityId + '/activity',
+			getPersonActivityNote: '/activitypub/user-id/' + $parameter.userId + '/activities/' + $parameter.activityId,
+			getPersonFeed: '/activitypub/user-id/' + $parameter.userId + '/outbox',
+			getRepository: '/activitypub/repository-id/' + $parameter.repositoryId,
+			instanceActorInbox: '/activitypub/actor/inbox',
+			instanceActorOutbox: '/activitypub/actor/outbox',
+			personInbox: '/activitypub/user-id/' + $parameter.userId + '/inbox',
+			repositoryInbox: '/activitypub/repository-id/' + $parameter.repositoryId + '/inbox',
+			repositoryOutbox: '/activitypub/repository-id/' + $parameter.repositoryId + '/outbox',
+		},
+		miscellaneous: {
+			getGitignoreTemplate: '/gitignore/templates/' + $parameter.templateName,
+			getGitignoreTemplates: '/gitignore/templates',
+			getLabelTemplate: '/label/templates/' + $parameter.templateName,
+			getLabelTemplates: '/label/templates',
+			getLicenseTemplate: '/licenses/' + $parameter.templateName,
+			getLicenseTemplates: '/licenses',
+			getNodeInfo: '/nodeinfo',
+			getSigningKey: '/signing-key.gpg',
+			getSSHSigningKey: '/signing-key.ssh',
+			getVersion: '/version',
+			renderMarkdown: '/markdown',
+			renderMarkdownRaw: '/markdown/raw',
+			renderMarkup: '/markup',
+		},
+		notification: {
+			getList: '/notifications',
+			getNewAvailable: '/notifications/new',
+			getRepoList: '/repos/' + $parameter.owner + '/' + $parameter.repository + '/notifications',
+			getThread: '/notifications/threads/' + $parameter.notificationId,
+			readList: '/notifications',
+			readRepoList: '/repos/' + $parameter.owner + '/' + $parameter.repository + '/notifications',
+			readThread: '/notifications/threads/' + $parameter.notificationId,
+		},
+		package: {
+			delete: '/packages/' + $parameter.packageOwner + '/' + $parameter.packageType + '/' + $parameter.packageName + '/' + $parameter.packageVersion,
+			get: '/packages/' + $parameter.packageOwner + '/' + $parameter.packageType + '/' + $parameter.packageName + '/' + $parameter.packageVersion,
+			getFiles: '/packages/' + $parameter.packageOwner + '/' + $parameter.packageType + '/' + $parameter.packageName + '/' + $parameter.packageVersion + '/files',
+			linkRepo: '/packages/' + $parameter.packageOwner + '/' + $parameter.packageType + '/' + $parameter.packageName + '/-/link/' + $parameter.linkedRepoName,
+			list: '/packages/' + $parameter.packageOwner,
+			unlinkRepo: '/packages/' + $parameter.packageOwner + '/' + $parameter.packageType + '/' + $parameter.packageName + '/-/unlink',
+		},
+		settings: {
+			getAPISettings: '/settings/api',
+			getAttachmentSettings: '/settings/attachment',
+			getRepositorySettings: '/settings/repository',
+			getUISettings: '/settings/ui',
+		},
 		wikiPage: {
 			create: '/repos/' + $parameter.owner + '/' + $parameter.repository + '/wiki/new',
 			delete:
@@ -2032,6 +2139,10 @@ export class GiteaForgejo implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
+						name: 'Activity Pub',
+						value: 'activitypub',
+					},
+					{
 						name: 'Admin',
 						value: 'admin',
 					},
@@ -2072,8 +2183,20 @@ export class GiteaForgejo implements INodeType {
 						value: 'milestone',
 					},
 					{
+						name: 'Miscellaneous',
+						value: 'miscellaneous',
+					},
+					{
+						name: 'Notification',
+						value: 'notification',
+					},
+					{
 						name: 'Organization',
 						value: 'organization',
+					},
+					{
+						name: 'Package',
+						value: 'package',
 					},
 					{
 						name: 'Pull Request',
@@ -2102,6 +2225,10 @@ export class GiteaForgejo implements INodeType {
 					{
 						name: 'Repository Template',
 						value: 'repositoryTemplate',
+					},
+					{
+						name: 'Setting',
+						value: 'settings',
 					},
 					{
 						name: 'Team',
@@ -2145,19 +2272,24 @@ export class GiteaForgejo implements INodeType {
 			...branchProtectionDescription,
 			...commitStatusDescription,
 			...collaboratorDescription,
+			...activityPubDescription,
 			...adminDescription,
 			...organizationDescription,
+			...miscellaneousDescription,
+			...notificationDescription,
 			...teamDescription,
 			...repositoryDescription,
 			...repositoryContentDescription,
 			...repositoryKeyDescription,
 			...repositoryTemplateDescription,
+			...settingsDescription,
 			...issueDescription,
 			...issueCommentDescription,
 			...issueLabelDescription,
 			...labelDescription,
 			...milestoneDescription,
 			...pullRequestDescription,
+			...packageDescription,
 			...releaseDescription,
 			...releaseAttachmentDescription,
 			...userDescription,
