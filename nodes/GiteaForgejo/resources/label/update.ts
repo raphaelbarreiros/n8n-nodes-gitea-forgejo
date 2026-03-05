@@ -39,6 +39,7 @@ export const labelUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'is_archived',
+				value: '={{$parameter.setArchived ? $value : undefined}}',
 			},
 		},
 	},
@@ -115,6 +116,7 @@ export const labelUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'exclusive',
+				value: '={{$parameter.setExclusive ? $value : undefined}}',
 			},
 		},
 	},

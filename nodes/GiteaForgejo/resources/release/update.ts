@@ -59,6 +59,7 @@ export const releaseUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'draft',
+				value: '={{$parameter.setDraft ? $value : undefined}}',
 			},
 		},
 	},
@@ -88,6 +89,7 @@ export const releaseUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'hide_archive_links',
+				value: '={{$parameter.setHideArchiveLinks ? $value : undefined}}',
 			},
 		},
 	},
@@ -134,6 +136,7 @@ export const releaseUpdateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'prerelease',
+				value: '={{$parameter.setPrerelease ? $value : undefined}}',
 			},
 		},
 	},
